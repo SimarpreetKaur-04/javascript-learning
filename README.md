@@ -4,3 +4,4 @@
 - Day 3: Javascript functions and basic logic
 - Day 4: Arrays and loops in Javascript
 - Day 5: Conditional statements and logic
+- Day 6: Javascript objects and real-world data modeling

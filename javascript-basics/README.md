@@ -15,6 +15,9 @@ This folder contains my JavaScript fundamentals practice.
 - if/else logic 
 - conditional logic
 - using conditions with loops
+- Objects
+- Key-value pairs
+- Accessing and updating properties
 
 ## Purpose
 To build strong JavaScript basics before moving to projects and open source.
