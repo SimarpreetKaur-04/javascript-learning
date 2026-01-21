@@ -22,10 +22,24 @@ function showExpenses() {
   });
 }
 
+function deleteExpense(index) {
+  if (index < 0 || index >= expenses.length) {
+    console.log("Invalid expense index");
+    return;
+  }
+  expenses.splice(index, 1);
+  console.log("Expense deleted successfully");
+}
+
+
 // Testing
 addExpense("Food", 200);
 addExpense("Transport", 100);
 addExpense("Books", 300);
 
+showExpenses();
+console.log("Total Expense: ₹", getTotalExpense());
+
+deleteExpense(1);
 showExpenses();
 console.log("Total Expense: ₹", getTotalExpense());
