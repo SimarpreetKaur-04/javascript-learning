@@ -7,6 +7,7 @@ A simple console-based expense tracker built using JavaScript.
 - View all expenses
 - Calculate total expense
 - Delete an expense
+- edit an expense
 
 ## Technologies
 - JavaScript (Node.js)
@@ -18,3 +19,5 @@ A simple console-based expense tracker built using JavaScript.
 - Clean code structure
 - Array manipulation using splice
 - modifying edge cases
+- using Array.reduce
+- refracting existing code

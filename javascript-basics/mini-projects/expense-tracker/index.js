@@ -31,15 +31,32 @@ function deleteExpense(index) {
   console.log("Expense deleted successfully");
 }
 
+function editExpense(index, newTitle, newAmount) {
+  if (index < 0 || index >= expenses.length) {
+    console.log("Invalid expense index");
+    return;
+  }
+
+  expenses[index].title = newTitle;
+  expenses[index].amount = newAmount;
+  console.log("Expense updated successfully");
+}
+
+
 
 // Testing
 addExpense("Food", 200);
 addExpense("Transport", 100);
 addExpense("Books", 300);
 
+
 showExpenses();
 console.log("Total Expense: ₹", getTotalExpense());
 
 deleteExpense(1);
+showExpenses();
+console.log("Total Expense: ₹", getTotalExpense());
+
+editExpense(0, "Groceries", 250);
 showExpenses();
 console.log("Total Expense: ₹", getTotalExpense());
