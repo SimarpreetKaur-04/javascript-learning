@@ -8,3 +8,5 @@
 - Day 7: Mini-Project : todo-list manager
 - Day 8: Extended To-Do List Manager with additional logic
 - Day 9: Refractor code, improve readability and adge case handling
+- day 10: updation
+- Day 11: add delete expense feature and improve expense tracker
