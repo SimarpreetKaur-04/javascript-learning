@@ -7,3 +7,4 @@
 - Day 6: Javascript objects and real-world data modeling
 - Day 7: Mini-Project : todo-list manager
 - Day 8: Extended To-Do List Manager with additional logic
+- Day 9: Refractor code, improve readability and adge case handling
