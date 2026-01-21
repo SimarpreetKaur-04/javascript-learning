@@ -14,4 +14,8 @@ A simple console-based JavaScript mini project.
 - Loops
 - Conditional statements
 
+## Future Improvements
+- Take user input from console
+- Delete tasks
+- Save tasks permanently
 

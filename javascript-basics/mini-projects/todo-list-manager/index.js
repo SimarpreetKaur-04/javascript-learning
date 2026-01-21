@@ -31,8 +31,24 @@ function completeTask(index) {
   }
 }
 
+// Function to count completed tasks
+function countCompletedTasks() {
+  let count = 0;
+  for (let i = 0; i < tasks.length; i++) {
+    if (tasks[i].completed) {
+      count++;
+    }
+  }
+  return count;
+}
+
+
 // Program execution
 showTasks();
 addTask("Build a mini project");
 completeTask(0);
 showTasks();
+
+let completedCount = countCompletedTasks();
+console.log("Completed tasks:", completedCount);
+
