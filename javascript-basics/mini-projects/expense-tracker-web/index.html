@@ -4,12 +4,28 @@
   <title>Expense Tracker</title>
   <style>
   body {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-  }
-  button {
-    margin-left: 10px;
-  }
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+}
+
+.container {
+  width: 350px;
+  margin: 50px auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+button {
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
 </style>
 
 </head>
@@ -19,7 +35,8 @@
 
   <input type="text" id="title" placeholder="Expense title" />
   <input type="number" id="amount" placeholder="Amount" />
-  <button onclick="addExpense()">Add Expense</button>
+  <button onclick="addExpense()">Add / Update Expense</button>
+
 
   <h3>Expenses</h3>
   <ul id="expenseList"></ul>
