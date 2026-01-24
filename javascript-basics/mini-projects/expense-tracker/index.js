@@ -60,3 +60,4 @@ console.log("Total Expense: ₹", getTotalExpense());
 editExpense(0, "Groceries", 250);
 showExpenses();
 console.log("Total Expense: ₹", getTotalExpense());
+
