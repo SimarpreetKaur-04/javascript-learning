@@ -39,20 +39,21 @@ This repository documents my step-by-step JavaScript learning journey, along wit
 - **Day 10:** Basic expense tracker (add & view expenses)  
 - **Day 11:** Delete expense feature and logic improvement  
 - **Day 12:** Edit expense feature and refactored total calculation  
+- **Day 13:** Code optimization, validation handling, and UI/logic improvements  
 
 **Features:**
 - Add expenses  
 - Edit expenses  
 - Delete expenses  
-- Calculate total expenses  
+- Input validation  
+- Accurate total expense calculation  
 
-**Concepts used:**
+**Concepts Used:**
 - CRUD operations  
 - Array methods (`push`, `splice`, `reduce`)  
 - Functions & data handling  
-- Clean code practices  
+- Code optimization & clean practices  
 
----
 
 ## 🛠 Technologies Used
 - JavaScript (Node.js)
