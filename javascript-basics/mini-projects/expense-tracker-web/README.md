@@ -11,3 +11,8 @@ A simple browser-based expense tracker built using HTML and JavaScript.
 - DOM manipulation
 - Event handling
 - Arrays and objects
+
+## New Features
+- LocalStorage support
+- Persistent expenses
+- Delete expense from UI

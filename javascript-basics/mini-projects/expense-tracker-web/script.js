@@ -1,4 +1,5 @@
-let expenses = [];
+let expenses = JSON.parse(localStorage.getItem("expenses")) || [];
+renderExpenses();
 
 function addExpense() {
   const title = document.getElementById("title").value;
@@ -10,6 +11,14 @@ function addExpense() {
   }
 
   expenses.push({ title, amount });
+  renderExpenses();
+
+  document.getElementById("title").value = "";
+  document.getElementById("amount").value = "";
+}
+
+function deleteExpense(index) {
+  expenses.splice(index, 1);
   renderExpenses();
 }
 
@@ -23,9 +32,14 @@ function renderExpenses() {
     total += exp.amount;
 
     const li = document.createElement("li");
-    li.textContent = `${exp.title} - ₹${exp.amount}`;
+    li.innerHTML = `
+      ${exp.title} - ₹${exp.amount}
+      <button onclick="deleteExpense(${index})">❌</button>
+    `;
+
     list.appendChild(li);
   });
 
   document.getElementById("total").textContent = total;
+  localStorage.setItem("expenses", JSON.stringify(expenses));
 }

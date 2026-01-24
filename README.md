@@ -40,6 +40,8 @@ This repository documents my step-by-step JavaScript learning journey, along wit
 - **Day 11:** Delete expense feature and logic improvement  
 - **Day 12:** Edit expense feature and refactored total calculation  
 - **Day 13:** Code optimization, validation handling, and UI/logic improvements  
+- **Day 14:** Added LocalStorage, UI delete feature, and basic styling
+
 
 **Features:**
 - Add expenses  
