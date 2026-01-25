@@ -46,6 +46,12 @@ This repository documents my step-by-step JavaScript learning journey, along wit
 - Improved UI with CSS styling
 - Refactored JavaScript for clean code
 - Optimized LocalStorage usage
+### 🔹 Day 16: Expense Tracker Advanced Features
+- Added expense categories
+- Category-wise expense totals
+- Improved UI with empty state handling
+- Refactored JavaScript logic
+
 
 
 **Features:**

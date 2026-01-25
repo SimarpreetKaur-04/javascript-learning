@@ -35,11 +35,22 @@ button:hover {
 
   <input type="text" id="title" placeholder="Expense title" />
   <input type="number" id="amount" placeholder="Amount" />
+  <select id="category">
+  <option value="">Select Category</option>
+  <option value="Food">Food</option>
+  <option value="Travel">Travel</option>
+  <option value="Study">Study</option>
+  <option value="Other">Other</option>
+</select>
+
   <button onclick="addExpense()">Add / Update Expense</button>
 
 
   <h3>Expenses</h3>
   <ul id="expenseList"></ul>
+  <h3>Category Summary</h3>
+  <ul id="categorySummary"></ul>
+
 
   <h3>Total: ₹<span id="total">0</span></h3>
 

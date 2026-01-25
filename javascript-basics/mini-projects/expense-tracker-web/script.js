@@ -1,69 +1,81 @@
+// Load expenses from localStorage or initialize empty array
 let expenses = JSON.parse(localStorage.getItem("expenses")) || [];
-let editIndex = -1;
 
+// Initial render
 renderExpenses();
 
 function addExpense() {
-  const titleInput = document.getElementById("title");
-  const amountInput = document.getElementById("amount");
+  const title = document.getElementById("title").value.trim();
+  const amount = Number(document.getElementById("amount").value);
+  const category = document.getElementById("category").value;
 
-  const title = titleInput.value;
-  const amount = Number(amountInput.value);
-
-  if (title === "" || amount <= 0) {
-    alert("Please enter valid expense");
+  if (title === "" || amount <= 0 || category === "") {
+    alert("Please enter valid expense details");
     return;
   }
 
-  if (editIndex === -1) {
-    // Add new expense
-    expenses.push({ title, amount });
-  } else {
-    // Edit existing expense
-    expenses[editIndex] = { title, amount };
-    editIndex = -1;
-  }
+  expenses.push({ title, amount, category });
 
-  titleInput.value = "";
-  amountInput.value = "";
+  // Save to localStorage
+  localStorage.setItem("expenses", JSON.stringify(expenses));
 
-  saveAndRender();
+  renderExpenses();
+
+  // Clear inputs
+  document.getElementById("title").value = "";
+  document.getElementById("amount").value = "";
+  document.getElementById("category").value = "";
+}
+
+function deleteExpense(index) {
+  expenses.splice(index, 1);
+
+  // Update localStorage after delete
+  localStorage.setItem("expenses", JSON.stringify(expenses));
+
+  renderExpenses();
 }
 
 function renderExpenses() {
   const list = document.getElementById("expenseList");
+  const totalElement = document.getElementById("total");
+  const summaryList = document.getElementById("categorySummary");
+
   list.innerHTML = "";
+  summaryList.innerHTML = "";
+
+  // ✅ Empty state handling
+  if (expenses.length === 0) {
+    list.innerHTML = "<li>No expenses added yet 🚫</li>";
+    totalElement.textContent = 0;
+    return;
+  }
 
   let total = 0;
+  const categoryTotals = {};
 
   expenses.forEach((exp, index) => {
     total += exp.amount;
 
+    // Category-wise total
+    categoryTotals[exp.category] =
+      (categoryTotals[exp.category] || 0) + exp.amount;
+
     const li = document.createElement("li");
     li.innerHTML = `
-      ${exp.title} - ₹${exp.amount}
-      <button onclick="editExpense(${index})">✏️</button>
+      <strong>${exp.category}</strong> | ${exp.title} - ₹${exp.amount}
       <button onclick="deleteExpense(${index})">❌</button>
     `;
 
     list.appendChild(li);
   });
 
-  document.getElementById("total").textContent = total;
-}
+  // Render category summary
+  for (let cat in categoryTotals) {
+    const li = document.createElement("li");
+    li.textContent = `${cat}: ₹${categoryTotals[cat]}`;
+    summaryList.appendChild(li);
+  }
 
-function deleteExpense(index) {
-  expenses.splice(index, 1);
-  saveAndRender();
-}
-
-function editExpense(index) {
-  document.getElementById("title").value = expenses[index].title;
-  document.getElementById("amount").value = expenses[index].amount;
-  editIndex = index;
-}
-
-function saveAndRender() {
-  localStorage.setItem("expenses", JSON.stringify(expenses));
-  renderExpenses();
+  totalElement.textContent = total;
 }
